@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbe:messageSchema xmlns:sbe="http://fixprotocol.io/2016/sbe"
+                   xmlns:xi="http://www.w3.org/2001/XInclude"
+                   package="com.bht.md.messages"
+                   id="1"
+                   version="0"
+                   semanticVersion="0.1"
+                   description="Passing a byte array"
+                   byteOrder="littleEndian">
+    <xi:include href="common-types.xml"/>
+    <types>
+        <composite name="messageHeader" description="Message identifiers and length of message root">
+            <type name="blockLength" primitiveType="uint16"/>
+            <type name="templateId" primitiveType="uint16"/>
+            <type name="schemaId" primitiveType="uint16"/>
+            <type name="version" primitiveType="uint16"/>
+        </composite>
+        <composite name="IntQty32" semanticType="Qty">
+            <type name="mantissa" primitiveType="int32"/>
+            <type name="exponent" primitiveType="int8" presence="constant">0</type>
+        </composite>
+        <composite name="Decimal64">
+            <type name="mantissa" primitiveType="int64"/>
+            <type name="exponent" primitiveType="int8" presence="constant">7</type>
+        </composite>
+        <composite name="groupSizeEncoding" description="Repeating group dimensions.">
+            <type name="blockLength" primitiveType="uint16"/>
+            <type name="numInGroup" primitiveType="uint16"/>
+        </composite>
+    </types>
+
+    <!--
+        Single byte array payload
+    -->
+    <sbe:message name="PackedByteMessage" id="1" semanticType="PackedByteMessage" description="Packed message">
+        <field name="msg" id="1" type="Timestamp"/>
+    </sbe:message>
+
+</sbe:messageSchema>

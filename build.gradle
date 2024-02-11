@@ -1,0 +1,63 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id "com.diffplug.spotless" version "6.25.0"
+}
+
+group = 'com.bht.md'
+version '1.1'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+spotless {
+    java {
+        removeUnusedImports()
+        formatAnnotations()
+        palantirJavaFormat()
+    }
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.mockito:mockito-core:4.1.0'
+
+    implementation 'javax.annotation:javax.annotation-api:1.3.2'
+    implementation 'org.agrona:agrona:1.20.0'
+    implementation 'io.aeron:aeron-all:1.43.0'
+    implementation 'net.openhft:chronicle-queue:5.25ea9'
+    implementation 'com.lmax:disruptor:4.0.0'
+    implementation group: 'org.hdrhistogram', name: 'HdrHistogram', version: '2.1.9'
+    implementation group: 'uk.co.real-logic', name: 'sbe-all', version: '1.27.1'
+    implementation group: 'org.jl.perftools', name: 'likwid-java-api', version: '1.0-SNAPSHOT'
+    //implementation 'com.tersesystems.logback:logback-classic:1.3.12'
+
+}
+
+test {
+    useJUnitPlatform()
+}
+
+publishing {
+    publications {
+        mdm(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+jar {
+    manifest {
+        attributes "Main-Class": "com.bht.md.samples.roundtrip.RTPerfTestPublisher"
+    }
+
+    from {
+        duplicatesStrategy = 'include'
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it)}
+    }
+}
+
+
