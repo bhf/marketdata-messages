@@ -2,7 +2,7 @@
 
 No testing pipeline is infallible, so we have to try and create multiple layers of safety nets for ourselves.
 
-The below describes various approaches to the testing of encoding and decoding messages. It is a combination of the comments in the unit test code aggregated into a single place for the interested reader. 
+The below describes various approaches to the testing of encoding and decoding messages, and the package structure of this test folder
 
 Please bear in mind that different people and organisations use unit tests in different ways - not all unit tests necessarilly need to be part of your build pipeline, but can also just be unit tests which are useful for developers to run locally.
 
