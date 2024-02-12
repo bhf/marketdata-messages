@@ -14,6 +14,9 @@ import org.mockito.Mockito;
 /** Explore different styles of testing for call ordering for SBE encode helpers
  * Please note: No testing pipeline is infallible, but we try and create
  * layers of safety nets wherever we can
+ *
+ * Alternatives to mockito are using anonymous classes
+ * with a collection for recording the ordering
  * */
 public class EncoderCallOrderingTestStyles {
 
