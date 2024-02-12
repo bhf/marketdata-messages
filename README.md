@@ -34,7 +34,9 @@ The project also allows comparing these existing paradigms with handling being d
 The SBE messages are generated using the sbe-all.jar from an XML config in the standard SBE format. A variety of messages are created to simulate different styles of market data, with and without repeating groups.
 
  ## Benchmarking and Performance Testing ## 
-For each of the paradigms, there is a PerfTestSubscriber* with a main() method that you need to run which will decode the SBE message and then echo it back to the publisher. 
+For each of the paradigms, there is a PerfTestSubscriber* with a main() method that you need to run which will decode the SBE message and then echo it back to the publisher.
+
+![](rtTS.png)
 
 The RTPerfTestPublisher publishes encoded messages to an Aeron publication (exclusive and non-exclusive) and in the same thread it processes the subscription on which it is expecting the echoed back message. 
 
