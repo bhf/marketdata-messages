@@ -43,7 +43,7 @@ public class MessageBasedRTRecorder extends AbstractSBEDecodingHandler {
   @Override
   public void handleSingleSidedQuote(SingleSidedQuoteDecoder msgDecoder, int stream, int session) {
     if (endOfWarmup > 0) {
-      long now = System.nanoTime() - msgDecoder.time();
+      long now = System.nanoTime();
       long delta = now - msgDecoder.time();
       int tid = msgDecoder.sbeTemplateId();
       perfTracker.handleMsgRT(tid, stream, session, delta);
@@ -53,7 +53,7 @@ public class MessageBasedRTRecorder extends AbstractSBEDecodingHandler {
   @Override
   public void handleTwoSidedQuote(TwoSidedQuoteDecoder msgDecoder, int stream, int session) {
     if (endOfWarmup > 0) {
-      long now = System.nanoTime() - msgDecoder.time();
+      long now = System.nanoTime();
       long delta = now - msgDecoder.time();
       int tid = msgDecoder.sbeTemplateId();
       perfTracker.handleMsgRT(tid, stream, session, delta);
@@ -63,7 +63,7 @@ public class MessageBasedRTRecorder extends AbstractSBEDecodingHandler {
   @Override
   public void handleMassBidsUpdate(MassBidsUpdateDecoder msgDecoder, int stream, int session) {
     if (endOfWarmup > 0) {
-      long now = System.nanoTime() - msgDecoder.time();
+      long now = System.nanoTime();
       long delta = now - msgDecoder.time();
       int tid = msgDecoder.sbeTemplateId();
       perfTracker.handleMsgRT(tid, stream, session, delta);
@@ -73,7 +73,7 @@ public class MessageBasedRTRecorder extends AbstractSBEDecodingHandler {
   @Override
   public void handleMassAsksUpdate(MassAsksUpdateDecoder msgDecoder, int stream, int session) {
     if (endOfWarmup > 0) {
-      long now = System.nanoTime() - msgDecoder.time();
+      long now = System.nanoTime();
       long delta = now - msgDecoder.time();
       int tid = msgDecoder.sbeTemplateId();
       perfTracker.handleMsgRT(tid, stream, session, delta);
@@ -83,7 +83,7 @@ public class MessageBasedRTRecorder extends AbstractSBEDecodingHandler {
   @Override
   public void handleMassSidedUpdate(MassSidedUpdateDecoder msgDecoder, int stream, int session) {
     if (endOfWarmup > 0) {
-      long now = System.nanoTime() - msgDecoder.time();
+      long now = System.nanoTime();
       long delta = now - msgDecoder.time();
       int tid = msgDecoder.sbeTemplateId();
       perfTracker.handleMsgRT(tid, stream, session, delta);
@@ -94,7 +94,7 @@ public class MessageBasedRTRecorder extends AbstractSBEDecodingHandler {
   public void handleGroupedSidedUpdate(
       GroupedSidedUpdateDecoder msgDecoder, int stream, int session) {
     if (endOfWarmup > 0) {
-      long now = System.nanoTime() - msgDecoder.time();
+      long now = System.nanoTime();
       long delta = now - msgDecoder.time();
       int tid = msgDecoder.sbeTemplateId();
       perfTracker.handleMsgRT(tid, stream, session, delta);
@@ -105,7 +105,7 @@ public class MessageBasedRTRecorder extends AbstractSBEDecodingHandler {
   public void handleMultiSymbolMassBidsUpdate(
       MultiSymbolMassBidsUpdateDecoder msgDecoder, int stream, int session) {
     if (endOfWarmup > 0) {
-      long now = System.nanoTime() - msgDecoder.time();
+      long now = System.nanoTime();
       long delta = now - msgDecoder.time();
       int tid = msgDecoder.sbeTemplateId();
       perfTracker.handleMsgRT(tid, stream, session, delta);
@@ -116,7 +116,7 @@ public class MessageBasedRTRecorder extends AbstractSBEDecodingHandler {
   public void handleMultiSymbolMassAsksUpdate(
       MultiSymbolMassAsksUpdateDecoder msgDecoder, int stream, int session) {
     if (endOfWarmup > 0) {
-      long now = System.nanoTime() - msgDecoder.time();
+      long now = System.nanoTime();
       long delta = now - msgDecoder.time();
       int tid = msgDecoder.sbeTemplateId();
       perfTracker.handleMsgRT(tid, stream, session, delta);
@@ -127,7 +127,7 @@ public class MessageBasedRTRecorder extends AbstractSBEDecodingHandler {
   public void handleMultiSymbolMassSidedUpdate(
       MultiSymbolMassSidedUpdateDecoder msgDecoder, int stream, int session) {
     if (endOfWarmup > 0) {
-      long now = System.nanoTime() - msgDecoder.time();
+      long now = System.nanoTime();
       long delta = now - msgDecoder.time();
       int tid = msgDecoder.sbeTemplateId();
       perfTracker.handleMsgRT(tid, stream, session, delta);
@@ -137,7 +137,7 @@ public class MessageBasedRTRecorder extends AbstractSBEDecodingHandler {
   @Override
   public void handleMarketState(MarketStateDecoder msgDecoder, int stream, int session) {
     if (endOfWarmup > 0) {
-      long now = System.nanoTime() - msgDecoder.time();
+      long now = System.nanoTime();
       long delta = now - msgDecoder.time();
       int tid = msgDecoder.sbeTemplateId();
       perfTracker.handleMsgRT(tid, stream, session, delta);
