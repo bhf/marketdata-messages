@@ -17,7 +17,6 @@ All discussions below are regarding classes you can find in com.bhf package of t
 
 
 Testing encoders for correct call ordering using Mockito. Alternatives to mockito are using anonymous classes with a collection for recording the ordering
-Verify the correct order of calls.
 
 The problem with this comes if you write the unit test in the same way that you write the encode helper i.e. both have the same ordering, but the ordering is incorrect. This is where the standard tests from ExploringEncoderUnitTestStyles come in useful. Other strategies for solving this risk are to have one person write the unit tests and another person the encoder.
 
