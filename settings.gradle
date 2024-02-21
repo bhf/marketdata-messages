@@ -1,0 +1,2 @@
+include 'marketdata-messages'
+rootProject.name = 'marketdata-messages'
