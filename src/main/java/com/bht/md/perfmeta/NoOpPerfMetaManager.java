@@ -2,7 +2,7 @@ package com.bht.md.perfmeta;
 
 public class NoOpPerfMetaManager implements PerformanceMetaManager {
     @Override
-    public void handleMsgRT(int tid, int streamId, int sessionId, long ts) {}
+    public void handleMsgRT(int tid, int streamId, int sessionId, long sent, long rec) {}
 
     @Override
     public void handleTestcaseDetails(String cfg) {}

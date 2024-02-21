@@ -31,8 +31,8 @@ public class ChronicleBasedPerfManager implements PerformanceMetaManager {
     }
 
     @Override
-    public void handleMsgRT(int tid, int streamId, int sessionId, long ts) {
-        msgRtMarshall.update(tid, streamId, sessionId, ts);
+    public void handleMsgRT(int tid, int streamId, int sessionId, long sent, long rec) {
+        msgRtMarshall.update(tid, streamId, sessionId, rec-sent);
         rtAppender.writeBytes(msgRtMarshall);
     }
 

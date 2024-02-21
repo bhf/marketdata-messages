@@ -1,7 +1,7 @@
 package com.bht.md.perfmeta;
 
 public interface PerformanceMetaManager {
-    void handleMsgRT(int tid, int streamId, int sessionId, long ts);
+    void handleMsgRT(int tid, int streamId, int sessionId, long sent, long rec);
 
     void handleTestcaseDetails(String cfg);
 
